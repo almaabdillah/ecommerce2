@@ -21,4 +21,14 @@ class Category extends Model
     {
         return $this->hasMany(Category::class, 'category_id', 'id');
     }
+
+    /**
+     * @return string
+     */
+    public function getFileName()
+    {
+        $string = explode('/', $this->image);
+
+        return $string[count($string) - 1];
+    }
 }
