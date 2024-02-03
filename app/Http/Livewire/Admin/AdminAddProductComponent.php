@@ -13,24 +13,77 @@ class AdminAddProductComponent extends Component
 {
     use WithFileUploads;
 
+    /**
+     * @var string
+     */
     public $name;
+
+    /**
+     * @var string
+     */
     public $slug;
+
+    /**
+     * @var string
+     */
     public $short_description;
+
+    /**
+     * @var string
+     */
     public $description;
+
+    /**
+     * @var string|int
+     */
     public $regular_price;
+
+    /**
+     * @var string|int
+     */
     public $sale_price;
+
+    /**
+     * @var string|int
+     */
     public $sku;
+
+    /**
+     * @var string
+     */
     public $stock_status = 'instock';
+
+    /**
+     * @var bool
+     */
     public $featured = false;
+
+    /**
+     * @var int
+     */
     public $quantity;
+
+    /**
+     * @var file
+     */
     public $image;
+
+    /**
+     * @var int
+     */
     public $category_id;
 
+    /**
+     * @return string
+     */
     public function generateSlug()
     {
         return Str::slug($this->name);
     }
 
+    /**
+     * @return RedirectResponse
+     */
     public function addProduct()
     {
         // Validating Request Input
@@ -80,6 +133,9 @@ class AdminAddProductComponent extends Component
         return redirect()->to(route('admin.products'));
     }
 
+    /**
+     * @return View
+     */
     public function render()
     {
         $categories = Category::orderBy('name','ASC')->get();
