@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('offer');
             $table->string('link');
             $table->string('image');
-            $table->boolean('status');
+            $table->boolean('status')->comment('Opsi Untuk Menampilkan Di Halaman Home t/f');
             $table->timestamps();
         });
     }
