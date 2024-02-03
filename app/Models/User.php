@@ -13,15 +13,25 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
+     * ADM User Role
+     *
+     * @var string
+     */
+    const ADM_ROLE = 'ADM';
+
+    /**
+     * USR User Role
+     *
+     * @var string
+     */
+    const USR_ROLE = 'USR';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $guarded = ['id'];
 
     /**
      * The attributes that should be hidden for serialization.

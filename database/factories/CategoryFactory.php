@@ -21,7 +21,8 @@ class CategoryFactory extends Factory
         $slug = Str::slug($category_name. '-');
         return [
             'name' => $category_name,
-            'slug' => $slug
+            'slug' => $slug,
+            'image' => $this->faker->imageUrl()
         ];
     }
 }

@@ -33,7 +33,7 @@ return new class extends Migration
             $table->unsignedInteger('quantity')->default(10);
             $table->string('image');
             $table->text('images')->nullable();
-            $table->bigInteger('category_id')->unsigned()->nullable();
+
             $table->timestamps();
         });
     }

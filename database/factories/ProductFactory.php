@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use illuminate\Support\Str;
 
@@ -25,11 +26,11 @@ class ProductFactory extends Factory
             'short_description' =>$this->faker->text(200),
             'description' =>$this->faker->text(500),
             'regular_price' => $this->faker->numberBetween(10,500),
-            'Sku' =>'PRD' . $this->faker->unique()->numberBetween(100,500),
+            'SKU' => 'PRD' . $this->faker->unique()->numberBetween(100,500),
             'stock_status' => 'instock',
             'quantity' =>$this->faker->numberBetween(10,50),
             'image' =>'product-' .$this->faker->numberBetween(1,16),
-            'category_id' => $this->faker->numberBetween(1,5)
+            'category_id' => $this->faker->numberBetween(1, Category::count()),
         ];
     }
 }
