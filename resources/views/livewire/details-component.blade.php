@@ -21,7 +21,7 @@
                                         <!-- MAIN SLIDES -->
                                         <div class="product-image-slider">
                                             <figure class="border-radius-10">
-                                                <img src="{{ asset('assets/imgs/products')}}/{{$product->image}}" alt="product image">
+                                                <img src="{{ $product->image }}" alt="product image">
                                             </figure>
                                             {{-- <figure class="border-radius-10">
                                                 <img src="{{ asset ('assets/imgs/shop/product-16-1.jpg') }}" alt="product image">
@@ -431,14 +431,14 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="row related-products">
-                                        @foreach($rproducts as $rproduct)
+                                        @foreach($relatedProducts as $rproduct)
                                         <div class="col-lg-3 col-md-4 col-12 col-sm-6">
                                             <div class="product-cart-wrap small hover-up">
                                                 <div class="product-img-action-wrap">
                                                     <div class="product-img product-img-zoom">
                                                         <a href="{{route ('product.details', ['slug' =>$rproduct->slug])}}" tabindex="0">
                                                             {{-- <img class="default-img" src="{{ asset('assets/imgs/products')}}/{{$product->image}}" alt="{{$rproduct->name}}"> --}}
-                                                            <img class="default-img" src="{{ asset ('assets/imgs/shop/product-')}}{{$rproduct->id}}-1.jpg" alt="{{$rproduct->name}}">
+                                                            <img class="default-img" src="{{ $rproduct->image }}" alt="{{$rproduct->name}}">
                                                             {{-- <img class="hover-img" src="{{ asset ('assets/imgs/shop/product-2-2.jpg') }}" alt=""> --}}
                                                         </a>
                                                     </div>
@@ -465,10 +465,10 @@
                                             </div>
                                         </div>
                                         @endforeach
-                                    
+
                                     </div>
                                 </div>
-                            </div>                            
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-3 primary-sidebar sticky-sidebar">

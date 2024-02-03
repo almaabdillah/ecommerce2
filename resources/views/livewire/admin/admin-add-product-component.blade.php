@@ -98,6 +98,7 @@
                                     <div class="mb-3 mt-3">
                                         <label for="featured" class="form-label">Featured</label>
                                         <select class="form_control" name="featured" wire:model="featured">
+                                            <option value="" selected hidden>Apakah ingin jadi Product Featured?</option>
                                             <option value="0">No</option>
                                             <option value="1">Yes</option>
                                         </select>

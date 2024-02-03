@@ -56,7 +56,7 @@
                                             <span><i class="fi-rs-apps-sort"></i>Sort by:</span>
                                         </div>
                                         <div class="sort-by-dropdown-wrap">
-                                            <span> Default Sorting <i class="fi-rs-angle-small-down"></i></span>
+                                            <span> {{ $orderBy ?? 'Default Sorting' }} <i class="fi-rs-angle-small-down"></i></span>
                                         </div>
                                     </div>
                                     <div class="sort-by-dropdown">
@@ -80,7 +80,7 @@
                                    <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="{{route ('product.details', ['slug' =>$product->slug])}}">
-                                                <img class="default-img" src="{{ asset('assets/imgs/products')}}/{{$product->image}}" alt="{{$product->name}}">
+                                                <img class="default-img" src="{{ $product->image }}" alt="{{$product->name}}">
                                                 {{-- <img class="hover-img" src="{{ asset('assets/imgs/shop/product-')}}{{$product->id}}-2.jpg " alt="{{$product->name}}"> --}}
                                             </a>
                                         </div>
@@ -120,7 +120,7 @@
                                 </div>
                             </div>
                             @endforeach
-                            
+
                         </div>
                         <!--pagination-->
                         <div class="pagination-area mt-15 mb-sm-5 mb-lg-0">
