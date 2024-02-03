@@ -85,7 +85,7 @@
                                             <p class="text-danger">{{ $message }}</p>
                                         @enderror
                                     </div>
-                                    <div class="mb-3 mt-3">
+                                    {{-- <div class="mb-3 mt-3">
                                         <label for="regular_price" class="form-label" wire:model="stock_status">Stock Status</label>
                                         <select class="form_control">
                                             <option value="instock">InStock</option>
@@ -94,7 +94,7 @@
                                         @error('stock_status')
                                             <p class="text-danger">{{ $message }}</p>
                                         @enderror
-                                    </div>
+                                    </div> --}}
                                     <div class="mb-3 mt-3">
                                         <label for="featured" class="form-label">Featured</label>
                                         <select class="form_control" name="featured" wire:model="featured">
@@ -117,7 +117,7 @@
                                         <input type="file" name="image" class="form_control" wire:model="image"/>
                                         @if($image)
                                             <img src="{{$image->temporaryUrl()}}" widht="120" />
-                                        @endif    
+                                        @endif
                                         @error('image')
                                             <p class="text-danger">{{ $message }}</p>
                                         @enderror

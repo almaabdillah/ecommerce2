@@ -55,10 +55,17 @@
                                         @foreach ($products as $product)
                                             <tr>
                                                 <td>{{ ++$i }}</td>
-                                                <td><img src="{{ asset('assets/imgs/products')}}/{{$product->image}}" alt="{{$product->name}}" widht="60" /></td>
+                                                <td>
+                                                    <img
+                                                        src="{{ $product->image }}"
+                                                        alt="{{ $product->name }}"
+                                                        class="img-thumbnail"
+                                                        width="200"
+                                                    />
+                                                </td>
                                                 <td>{{ $product->name }}</td>
                                                 <td>{{ $product->stock_status }}</td>
-                                                <td>{{ $product->regular_price }}</td>
+                                                <td>{{ 'Rp.'. number_format($product->regular_price, 0) }}</td>
                                                 <td>{{ $product->category->name }}</td>
                                                 <td>{{ $product->created_at }}</td>
                                                 <td>
