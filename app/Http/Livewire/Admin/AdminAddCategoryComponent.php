@@ -77,7 +77,7 @@ class AdminAddCategoryComponent extends Component
         $this->image->storeAs('categories', $imageName);
 
         // Append Image to Category Array
-        $category['image'] = asset("storage/products/$imageName");
+        $category['image'] = asset("storage/categories/$imageName");
 
         // Store Data to Category Table
         $category->save();
